@@ -11,4 +11,5 @@ chapters:
 - file: 05_sc_with_scipy
 - file: 06_sklearn
 - file: 07_getting_data
+- file: 08_digital_reporting
 - file: A_math_statistics
