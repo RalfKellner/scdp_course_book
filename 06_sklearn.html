@@ -63,7 +63,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Collecting data" href="07_getting_data.html" />
+    <link rel="next" title="Pytorch" href="07_torch.html" />
     <link rel="prev" title="Scientific computing with scipy" href="05_sc_with_scipy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,8 +187,10 @@
 <li class="toctree-l1"><a class="reference internal" href="04_graphics.html">Graphics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_sc_with_scipy.html">Scientific computing with scipy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">SciKit Learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_getting_data.html">Collecting data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_digital_reporting.html">Digital reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_torch.html">Pytorch</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="08_getting_data.html">Collecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_digital_reporting.html">Digital reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_math_statistics.html">Appendix - Math and statistics</a></li>
 
 
@@ -1056,7 +1058,7 @@ Visualization:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/89f49034d1b6b22815581772e0bb2cf24c2a91d2908b1631881f65e8ced0e8e3.png" src="_images/89f49034d1b6b22815581772e0bb2cf24c2a91d2908b1631881f65e8ced0e8e3.png" />
+<img alt="_images/2c38a43db14ec853c487368143e1017b97860e13f8e0da3f3b66ce5e37784501.png" src="_images/2c38a43db14ec853c487368143e1017b97860e13f8e0da3f3b66ce5e37784501.png" />
 </div>
 </div>
 <p>Note that the number of groups should be determined in other ways which we are not going to discuss any further. However, one important aspect for this application should be mentioned. As PCA only mean centers the data by default, its input data is largely impacted by the individual variance of each company which is why Tesla is playing such a special role in our example as its variance is the largest among those companies. Usually, we are more interested in companies which play an important role with respect to the dependencies to other companies. We can shift the attention of the PCA towards this characteristic by standardizing the input data. See below how drastically this changes the loadings for the second principal component in our example. Now, ExxonMobil (XOM) exhibits the most distinct loading combination which is likely due to its rather low average correlation to the other companies.</p>
@@ -1318,11 +1320,11 @@ Visualization:
       </div>
     </a>
     <a class="right-next"
-       href="07_getting_data.html"
+       href="07_torch.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Collecting data</p>
+        <p class="prev-next-title">Pytorch</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
