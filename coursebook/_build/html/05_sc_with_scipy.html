@@ -187,8 +187,10 @@
 <li class="toctree-l1"><a class="reference internal" href="04_graphics.html">Graphics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Scientific computing with scipy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_sklearn.html">SciKit Learn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_getting_data.html">Collecting data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_digital_reporting.html">Digital reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_torch.html">Pytorch</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="08_getting_data.html">Collecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_digital_reporting.html">Digital reporting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="A_math_statistics.html">Appendix - Math and statistics</a></li>
 
 
@@ -517,7 +519,7 @@ Cov(X,Y) = E\left[(X_1-E(X_1))\cdot (X_2-E(X_2)) \right] = E(X_1\cdot X_2) - E(X
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/16555edc9d3a0d95938e41fc2fa0b2f4e20586509f0bc451f5b4432f2e04b9e7.png" src="_images/16555edc9d3a0d95938e41fc2fa0b2f4e20586509f0bc451f5b4432f2e04b9e7.png" />
+<img alt="_images/bba0674df94d135ba23d8925000faa691ea4e467a1b8ca178ceabe7ebd2262be.png" src="_images/bba0674df94d135ba23d8925000faa691ea4e467a1b8ca178ceabe7ebd2262be.png" />
 </div>
 </div>
 <p>Calculations can be done as you hopefully remember from your statistics classes. For instance, the probability <span class="math notranslate nohighlight">\(P \left(1 \leq X \leq 2 \right) = P \left( X \leq 2 \right) - P \left( X \leq 1 \right)\)</span> can be determined by:</p>
@@ -541,7 +543,7 @@ Cov(X,Y) = E\left[(X_1-E(X_1))\cdot (X_2-E(X_2)) \right] = E(X_1\cdot X_2) - E(X
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6448536269514722
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.644853626951472
 </pre></div>
 </div>
 </div>
@@ -574,8 +576,8 @@ Cov(X,Y) = E\left[(X_1-E(X_1))\cdot (X_2-E(X_2)) \right] = E(X_1\cdot X_2) - E(X
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/33aad7bbcb8a18301314e5f95dca541c37efa9571fc1ec9615777ae0652684dd.png" src="_images/33aad7bbcb8a18301314e5f95dca541c37efa9571fc1ec9615777ae0652684dd.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The estimated quantile of S is: 8.6858
+<img alt="_images/287ccd757debf441504e8d63a3857eb38f88f2cbdc4b067e9fedb8af13e7cb7f.png" src="_images/287ccd757debf441504e8d63a3857eb38f88f2cbdc4b067e9fedb8af13e7cb7f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The estimated quantile of S is: 8.8911
 </pre></div>
 </div>
 </div>
@@ -608,7 +610,7 @@ g(y | \boldsymbol{\theta}, l, s) = f\left(\frac{y - l}{s} | \boldsymbol{\theta}\
 <p>Optimization is an important tool in the financial domain. A rather obvious example is given by portfolio optimization which aims to distribute capital among investments in the most profitable (risk-adjusted) way. However, beyond such obvious examples, in many cases, decisions in the financial domain, are build upon empirical analysis which use models that are adjusted to empirical data in the best possible way. To specify what the best possible way is, let us quickly recap important aspects of optimization.</p>
 <section id="one-dimensional-functions">
 <h3>One-dimensional functions<a class="headerlink" href="#one-dimensional-functions" title="Link to this heading">#</a></h3>
-<p>Given a real-valued function <span class="math notranslate nohighlight">\(f: \mathbb{R} \to \mathbb{R}\)</span>, we say that <span class="math notranslate nohighlight">\(x_{*}\)</span> is a local minimum, if <span class="math notranslate nohighlight">\(f\left( x_{*} \right) \leq x\)</span> for all <span class="math notranslate nohighlight">\(x \in [x_{*} - \epsilon, x_{*} + \epsilon]\)</span>. Basically this means in a certain range of x, no function value is smaller or equal to <span class="math notranslate nohighlight">\(f\left( x_{*} \right)\)</span>. A global minimum is the value <span class="math notranslate nohighlight">\(x_{**}\)</span> for which it holds that <span class="math notranslate nohighlight">\(f\left( x_{*} \right) \leq x\)</span> for all <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>. Usually it is enough to examine a function for minima, because if we want to find maxima of a function, we can search for the minima of <span class="math notranslate nohighlight">\(-f\)</span> due to the min-max-duality. See below, that the value on the x-axis which minimizes <span class="math notranslate nohighlight">\(f\)</span> is the same which maximizes <span class="math notranslate nohighlight">\(-f\)</span>. This is what is meant by it.</p>
+<p>Given a real-valued function <span class="math notranslate nohighlight">\(f: \mathbb{R} \to \mathbb{R}\)</span>, we say that <span class="math notranslate nohighlight">\(x_{*}\)</span> is a local minimum, if <span class="math notranslate nohighlight">\(f\left( x_{*} \right) \leq f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in [x_{*} - \epsilon, x_{*} + \epsilon]\)</span>. Basically this means in a certain range of x, no function value is smaller or equal to <span class="math notranslate nohighlight">\(f\left( x_{*} \right)\)</span>. A global minimum is the value <span class="math notranslate nohighlight">\(x_{**}\)</span> for which it holds that <span class="math notranslate nohighlight">\(f\left( x_{*} \right) \leq f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>. Usually it is enough to examine a function for minima, because if we want to find maxima of a function, we can search for the minima of <span class="math notranslate nohighlight">\(-f\)</span> due to the min-max-duality. See below, that the value on the x-axis which minimizes <span class="math notranslate nohighlight">\(f\)</span> is the same which maximizes <span class="math notranslate nohighlight">\(-f\)</span>. This is what is meant by it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.7</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
