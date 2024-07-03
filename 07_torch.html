@@ -380,8 +380,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pytorch">
 <h1>Pytorch<a class="headerlink" href="#pytorch" title="Link to this heading">#</a></h1>
-<p>While sciki-learn is a popular machine learning library, other popular libraries in this domain should not be ignored. While scikit-learn has its focus on traditional machine learning algorithms and is characterized by its uniform sytnax and purposes w.r.t. to preprocessing, model selection, model training and model evaluation, <em>pytorch</em> plays a more important role in the field of deep learning, especially for models which are build as neural network architectures.</p>
-<p>Pytorch provides tools for building and training complex neural network models, particularly those that benefit from GPU acceleration. Thus, it is suitable for applications in, e.g., computer vision, natural language processing, and reinforcement learning. In comparison to scikit-learn, it can be conisdered as a low-level library that provides more control and flexibility over model building and training. At the same time, it requires more code to set up and train models compared to scikit-learn, but this allows for greater customization.</p>
+<p>Sciki-learn is a popular machine learning library, however, other popular libraries in this domain should not be ignored. While scikit-learn has its focus on traditional machine learning algorithms and is characterized by its uniform sytnax and purposes w.r.t. to preprocessing, model selection, model training and model evaluation, <em>pytorch</em> plays a more important role in the field of deep learning, especially for models which are build as neural network architectures.</p>
+<p>Pytorch provides tools for building and training complex neural network models, particularly those that benefit from GPU acceleration. Thus, it is suitable for applications in, e.g., computer vision, natural language processing, and reinforcement learning. In comparison to scikit-learn, it can be considered as a low-level library that provides more control and flexibility over model building and training. At the same time, it requires more code to set up and train models compared to scikit-learn, but this allows for greater customization.</p>
 <p>Its core blocks are:</p>
 <ul class="simple">
 <li><p>Tensors: Fundamental data structure, similar to NumPy arrays but with GPU support.</p></li>
@@ -390,8 +390,8 @@ document.write(`
 <li><p>Optim: Optimization algorithms (e.g., SGD, Adam) for training models.</p></li>
 <li><p>Dynamic Computational Graphs: Graphs are built on-the-fly, allowing for flexible model design.</p></li>
 </ul>
-<p>By the sub-modules of the NN module, neural networks can be manually defined in very custom ways. Such complex models are usually trained by numerical optimization which is based on gradient information for which differentiation is a must. The functionality of automatic differentiation in combination with the availability of different optimization algorithms is one of the main reasons for the popularity of pytorch. Furthermore, pytorch is open-source and has a large and usually helpful community.</p>
-<p>At the same time, one should know that <em>tensorflow</em> is an equivalent option to pytorch. It offers more or less the same functionalities. Due to the more pythonic way models are defined with pytorch and its wide spread usage in the research area, we are going to stick to pytorch.  So let us learn about the key concepts of pytorch.</p>
+<p>By the sub-modules of the NN module, neural networks can be manually defined in very custom ways. Such complex models are usually trained by numerical optimization which is based on gradient information that is in need of differentiation. The functionality of automatic differentiation in combination with the availability of different optimization algorithms is one of the main reasons for the popularity of pytorch. Furthermore, pytorch is open-source and has a large and usually helpful community.</p>
+<p>Note that <em>tensorflow</em> is an equivalent option to pytorch. It offers more or less the same functionalities. Due to the more pythonic way how models are defined with pytorch and its wide spread usage in the research area, we are going to stick to pytorch.  So let us learn about the key concepts of pytorch.</p>
 <section id="tensors">
 <h2>Tensors<a class="headerlink" href="#tensors" title="Link to this heading">#</a></h2>
 <p>Tensors are very similar to numpy arrays, however, they can run on the GPU and are optimized for automatic differentiation. Tensors can be created from data or from a numpy array (many other ways to create tensors do exist).</p>
@@ -468,8 +468,8 @@ f \left( \mathbf{x} \right): \mathbf{x}^T W + b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2468, 1.1193, 2.0943],
-        [1.2116, 1.3068, 4.0909]], grad_fn=&lt;AddmmBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.7654,  0.1661,  0.2469],
+        [-0.9012,  0.2351, -0.4657]], grad_fn=&lt;AddmmBackward0&gt;)
 </pre></div>
 </div>
 </div>
@@ -481,8 +481,8 @@ f \left( \mathbf{x} \right): \mathbf{x}^T W + b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2468, 1.1193, 2.0943],
-        [1.2116, 1.3068, 4.0909]], grad_fn=&lt;AddBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.7654,  0.1661,  0.2469],
+        [-0.9012,  0.2351, -0.4657]], grad_fn=&lt;AddBackward0&gt;)
 </pre></div>
 </div>
 </div>
@@ -495,9 +495,9 @@ f \left( \mathbf{x} \right): \mathbf{x}^T W + b
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([[ 0.0535,  0.4289],
-        [-0.3050,  0.3988],
-        [ 0.3762,  0.6221]], requires_grad=True)
+tensor([[ 0.6360, -0.7039],
+        [-0.3556,  0.3901],
+        [-0.4074,  0.0511]], requires_grad=True)
 </pre></div>
 </div>
 </div>
@@ -510,7 +510,7 @@ tensor([[ 0.0535,  0.4289],
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([-0.6645,  0.6267,  0.4739], requires_grad=True)
+tensor([ 0.0064, -0.2586,  0.5521], requires_grad=True)
 </pre></div>
 </div>
 </div>
@@ -662,36 +662,36 @@ L\left( \Theta \right) = \sum_i l\left(y_i, \hat{y}_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current value of theta: [1.1872132]
-Loss value: [0.39134237]
-Gradient value: [-2.5022945]
-Current value of theta: [1.4374427]
-Loss value: [0.01565368]
-Gradient value: [-0.5004587]
-Current value of theta: [1.4874885]
-Loss value: [0.00062615]
-Gradient value: [-0.10009193]
-Current value of theta: [1.4974977]
-Loss value: [2.5046465e-05]
-Gradient value: [-0.02001858]
-Current value of theta: [1.4994996]
-Loss value: [1.0017632e-06]
-Gradient value: [-0.00400352]
-Current value of theta: [1.4998999]
-Loss value: [4.0108716e-08]
-Gradient value: [-0.00080109]
-Current value of theta: [1.49998]
-Loss value: [1.6043487e-09]
-Gradient value: [-0.00016022]
-Current value of theta: [1.499996]
-Loss value: [6.571099e-11]
-Gradient value: [-3.2424927e-05]
-Current value of theta: [1.4999992]
-Loss value: [2.7853275e-12]
-Gradient value: [-6.67572e-06]
-Current value of theta: [1.4999999]
-Loss value: [5.684342e-14]
-Gradient value: [-9.536743e-07]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current value of theta: [0.10416355]
+Loss value: [7.793438]
+Gradient value: [-11.166692]
+Current value of theta: [1.2208327]
+Loss value: [0.3117375]
+Gradient value: [-2.2333384]
+Current value of theta: [1.4441665]
+Loss value: [0.0124695]
+Gradient value: [-0.44666767]
+Current value of theta: [1.4888333]
+Loss value: [0.00049878]
+Gradient value: [-0.08933353]
+Current value of theta: [1.4977666]
+Loss value: [1.9952053e-05]
+Gradient value: [-0.01786709]
+Current value of theta: [1.4995533]
+Loss value: [7.980821e-07]
+Gradient value: [-0.00357342]
+Current value of theta: [1.4999107]
+Loss value: [3.1889215e-08]
+Gradient value: [-0.0007143]
+Current value of theta: [1.4999821]
+Loss value: [1.2789769e-09]
+Gradient value: [-0.00014305]
+Current value of theta: [1.4999964]
+Loss value: [5.1159077e-11]
+Gradient value: [-2.861023e-05]
+Current value of theta: [1.4999993]
+Loss value: [2.046363e-12]
+Gradient value: [-5.722046e-06]
 </pre></div>
 </div>
 </div>
@@ -721,16 +721,16 @@ Gradient value: [-9.536743e-07]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Theta after gradient update: 1.2527003288269043
-Theta after gradient update: 1.4505400657653809
-Theta after gradient update: 1.4901080131530762
-Theta after gradient update: 1.4980216026306152
-Theta after gradient update: 1.499604344367981
-Theta after gradient update: 1.4999208450317383
-Theta after gradient update: 1.4999841451644897
-Theta after gradient update: 1.4999967813491821
-Theta after gradient update: 1.4999994039535522
-Theta after gradient update: 1.4999998807907104
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Theta after gradient update: 1.0957361459732056
+Theta after gradient update: 1.419147253036499
+Theta after gradient update: 1.4838294982910156
+Theta after gradient update: 1.4967658519744873
+Theta after gradient update: 1.4993531703948975
+Theta after gradient update: 1.4998706579208374
+Theta after gradient update: 1.4999741315841675
+Theta after gradient update: 1.4999948740005493
+Theta after gradient update: 1.499998927116394
+Theta after gradient update: 1.499999761581421
 </pre></div>
 </div>
 </div>
@@ -850,84 +850,84 @@ Target batch size: torch.Size([64, 1])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 1 is: 1.2024
-The test loss after epoch 1 is: 0.6699
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 1 is: 1.3653
+The test loss after epoch 1 is: 0.6846
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 2 is: 0.6390
-The test loss after epoch 2 is: 0.5935
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 2 is: 0.6584
+The test loss after epoch 2 is: 0.5987
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 3 is: 0.5711
-The test loss after epoch 3 is: 0.5368
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 3 is: 0.5824
+The test loss after epoch 3 is: 0.5447
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 4 is: 0.5220
-The test loss after epoch 4 is: 0.4981
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 4 is: 0.5373
+The test loss after epoch 4 is: 0.5109
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 5 is: 0.4912
-The test loss after epoch 5 is: 0.4759
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 5 is: 0.5079
+The test loss after epoch 5 is: 0.4888
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 6 is: 0.4747
-The test loss after epoch 6 is: 0.4659
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 6 is: 0.4883
+The test loss after epoch 6 is: 0.4750
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 7 is: 0.4666
-The test loss after epoch 7 is: 0.4591
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 7 is: 0.4757
+The test loss after epoch 7 is: 0.4657
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 8 is: 0.4613
-The test loss after epoch 8 is: 0.4543
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 8 is: 0.4672
+The test loss after epoch 8 is: 0.4593
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 9 is: 0.4571
-The test loss after epoch 9 is: 0.4506
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 9 is: 0.4612
+The test loss after epoch 9 is: 0.4543
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 10 is: 0.4536
-The test loss after epoch 10 is: 0.4470
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 10 is: 0.4566
+The test loss after epoch 10 is: 0.4499
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 11 is: 0.4503
-The test loss after epoch 11 is: 0.4435
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 11 is: 0.4527
+The test loss after epoch 11 is: 0.4460
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 12 is: 0.4467
-The test loss after epoch 12 is: 0.4373
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 12 is: 0.4492
+The test loss after epoch 12 is: 0.4425
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 13 is: 0.4430
-The test loss after epoch 13 is: 0.4340
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 13 is: 0.4458
+The test loss after epoch 13 is: 0.4391
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 14 is: 0.4396
-The test loss after epoch 14 is: 0.4304
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 14 is: 0.4427
+The test loss after epoch 14 is: 0.4355
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 15 is: 0.4367
-The test loss after epoch 15 is: 0.4274
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 15 is: 0.4396
+The test loss after epoch 15 is: 0.4321
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 16 is: 0.4338
-The test loss after epoch 16 is: 0.4244
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 16 is: 0.4367
+The test loss after epoch 16 is: 0.4290
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 17 is: 0.4309
-The test loss after epoch 17 is: 0.4217
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 17 is: 0.4339
+The test loss after epoch 17 is: 0.4262
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 18 is: 0.4279
-The test loss after epoch 18 is: 0.4189
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 18 is: 0.4311
+The test loss after epoch 18 is: 0.4235
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 19 is: 0.4252
-The test loss after epoch 19 is: 0.4165
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 19 is: 0.4284
+The test loss after epoch 19 is: 0.4210
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 20 is: 0.4226
-The test loss after epoch 20 is: 0.4138
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average training batch loss for the epoch 20 is: 0.4257
+The test loss after epoch 20 is: 0.4184
 </pre></div>
 </div>
 </div>
