@@ -9,3 +9,4 @@ pyproject.toml
 streamlit_stock_watcher
 digital_reporting_demo
 nasdaq_nyse_amex_with_sec_info.sqlite
+streamlit/*
